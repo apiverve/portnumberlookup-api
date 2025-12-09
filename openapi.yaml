@@ -1,0 +1,79 @@
+openapi: 3.0.4
+info:
+  title: Port Number Lookup
+  description: Port Number Lookup is a tool for looking up well-known port numbers and network services. It provides information about ports including service name, protocol, description, and category for common network services.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/portnumberlookup:
+    get:
+      summary: Lookup Port Number
+      description: Port Number Lookup is a tool for looking up well-known port numbers and network services. It provides information about ports including service name, protocol, description, and category for common network services.
+      operationId: portnumberlookup
+      parameters:
+      - name: port
+        in: query
+        schema:
+          type: string
+        required: false
+        description: Port number to lookup (1-65535, provide either port or service)
+        example: '443'
+      - name: service
+        in: query
+        schema:
+          type: string
+        required: false
+        description: Service name to lookup (provide either port or service)
+        example: https
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  port: 443
+                  service: HTTPS
+                  protocol: TCP
+                  description: HTTP Secure (HTTP over TLS/SSL)
+                  category: Web
+                  is_well_known: true
+                  is_registered: false
+                  is_dynamic: false
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
