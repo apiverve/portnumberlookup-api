@@ -15,8 +15,7 @@ const api = new portnumberlookupAPI({
 
 // Example query
 var query = {
-  port: "443",
-  service: "https"
+  port: 443
 };
 
 // Make the API request using callback
