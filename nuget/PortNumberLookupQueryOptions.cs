@@ -11,17 +11,9 @@ namespace APIVerve.API.PortNumberLookup
     public class PortNumberLookupQueryOptions
     {
         /// <summary>
-        /// Port number to lookup (1-65535, provide either port or service)
-        /// Example: 443
+        /// Port number to lookup
         /// </summary>
         [JsonProperty("port")]
         public string Port { get; set; }
-
-        /// <summary>
-        /// Service name to lookup (provide either port or service)
-        /// Example: https
-        /// </summary>
-        [JsonProperty("service")]
-        public string Service { get; set; }
     }
 }
