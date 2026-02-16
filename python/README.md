@@ -223,8 +223,9 @@ from apiverve_portnumberlookup.apiClient import PortnumberlookupAPIClient
 
 api = PortnumberlookupAPIClient("[YOUR_API_KEY]")
 
+query = { "port": 443 }
+
 try:
-    query = { "port": 443 }
     result = api.execute(query)
     print(result)
 finally:
