@@ -30,7 +30,11 @@ The Port Number Lookup API provides a simple, reliable way to integrate port num
 ```javascript
 async function callPortNumberLookupAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/portnumberlookup', {
+        const params = new URLSearchParams({
+            port: 443
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/portnumberlookup?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +54,7 @@ callPortNumberLookupAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/portnumberlookup?param=value" \
+curl -X GET "https://api.apiverve.com/v1/portnumberlookup?port=443" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,7 +154,7 @@ go get github.com/apiverve/portnumberlookup-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +173,7 @@ go get github.com/apiverve/portnumberlookup-api/go
 The Port Number Lookup API is commonly used for:
 
 - **Web Applications** - Add port number lookup features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with port number lookup capabilities
 - **Data Pipelines** - Process and analyze data at scale
