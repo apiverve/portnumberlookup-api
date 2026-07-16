@@ -25,12 +25,15 @@ namespace APIVerve.API.PortNumberLookup
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("port")]
-        public long Port { get; set; }
+        public long? Port { get; set; }
 
         [JsonProperty("service")]
         public string Service { get; set; }
@@ -45,12 +48,24 @@ namespace APIVerve.API.PortNumberLookup
         public string Category { get; set; }
 
         [JsonProperty("is_well_known")]
-        public bool IsWellKnown { get; set; }
+        public bool? IsWellKnown { get; set; }
 
         [JsonProperty("is_registered")]
-        public bool IsRegistered { get; set; }
+        public bool? IsRegistered { get; set; }
 
         [JsonProperty("is_dynamic")]
-        public bool IsDynamic { get; set; }
+        public bool? IsDynamic { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
