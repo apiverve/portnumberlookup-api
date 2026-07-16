@@ -14,6 +14,6 @@ namespace APIVerve.API.PortNumberLookup
         /// Port number to lookup
         /// </summary>
         [JsonProperty("port")]
-        public string Port { get; set; }
+        public int Port { get; set; }
     }
 }
