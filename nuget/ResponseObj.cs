@@ -32,8 +32,17 @@ namespace APIVerve.API.PortNumberLookup
 
     public partial class Data
     {
+        [JsonProperty("count")]
+        public long? Count { get; set; }
+
+        [JsonProperty("ports")]
+        public Port[] Ports { get; set; }
+    }
+
+    public partial class Port
+    {
         [JsonProperty("port")]
-        public long? Port { get; set; }
+        public long? PortPort { get; set; }
 
         [JsonProperty("service")]
         public string Service { get; set; }
