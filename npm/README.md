@@ -1,13 +1,10 @@
 # Port Number Lookup API
 
-Port Number Lookup is a tool for looking up well-known port numbers and network services. It provides information about ports including service name, protocol, description, and category for common network services.
+Port Number Lookup identifies network services and port ranges from any port number or service name. Each query returns the assigned service, description, and classification across well-known, registered, or dynamic ranges, while paid plans add protocol details.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 [![npm version](https://img.shields.io/npm/v/@apiverve/portnumberlookup.svg)](https://www.npmjs.com/package/@apiverve/portnumberlookup)
 
-This is a Javascript Wrapper for the [Port Number Lookup API](https://apiverve.com/marketplace/portnumberlookup?utm_source=npm&utm_medium=readme)
+This is a JavaScript wrapper for the [Port Number Lookup API](https://apiverve.com/marketplace/portnumberlookup?utm_source=npm&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -28,15 +25,15 @@ yarn add @apiverve/portnumberlookup
 ## Configuration
 
 Before using the Port Number Lookup API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=npm&utm_medium=readme)
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=npm&utm_medium=referral&utm_content=readme)
 
 ---
 
 ## Quick Start
 
-[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart?utm_source=npm&utm_medium=readme)
+[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart?utm_source=npm&utm_medium=referral&utm_content=readme)
 
-The Port Number Lookup API documentation is found here: [https://docs.apiverve.com/ref/portnumberlookup](https://docs.apiverve.com/ref/portnumberlookup?utm_source=npm&utm_medium=readme).
+The Port Number Lookup API documentation is found here: [https://docs.apiverve.com/ref/portnumberlookup](https://docs.apiverve.com/ref/portnumberlookup?utm_source=npm&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -122,14 +119,19 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "port": 443,
-    "service": "HTTPS",
-    "protocol": "TCP",
-    "description": "HTTP Secure (HTTP over TLS/SSL)",
-    "category": "Web",
-    "is_well_known": true,
-    "is_registered": false,
-    "is_dynamic": false
+    "count": 1,
+    "ports": [
+      {
+        "port": 443,
+        "service": "HTTPS",
+        "protocol": "TCP",
+        "description": "HTTP Secure (HTTP over TLS/SSL)",
+        "category": "Web",
+        "is_well_known": true,
+        "is_registered": false,
+        "is_dynamic": false
+      }
+    ]
   }
 }
 ```
@@ -138,7 +140,7 @@ async function makeRequest() {
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=npm&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=npm&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -150,12 +152,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=npm&utm_medium=readme), [Privacy Policy](https://apiverve.com/privacy?utm_source=npm&utm_medium=readme), and [Refund Policy](https://apiverve.com/refund?utm_source=npm&utm_medium=readme).
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=npm&utm_medium=referral&utm_content=readme) and [Privacy Policy](https://apiverve.com/privacy?utm_source=npm&utm_medium=referral&utm_content=readme).
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

@@ -25,6 +25,11 @@ declare module '@apiverve/portnumberlookup' {
 
 
   interface PortNumberLookupData {
+      count: number | null;
+      ports: Port[];
+  }
+  
+  interface Port {
       port:         number | null;
       service:      null | string;
       protocol:     null | string;
