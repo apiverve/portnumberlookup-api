@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: Port Number Lookup
   description: >-
-    Port Number Lookup is a tool for looking up well-known port numbers and
-    network services. It provides information about ports including service
-    name, protocol, description, and category for common network services.
+    Port Number Lookup identifies network services and port ranges from any port
+    number or service name. Each query returns the assigned service,
+    description, and classification across well-known, registered, or dynamic
+    ranges, while paid plans add protocol details.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +20,7 @@ servers:
 paths:
   /v1/portnumberlookup:
     get:
-      summary: Lookup by Port Number
+      summary: Port Number Lookup
       description: Look up service information by port number
       operationId: portnumberlookup
       parameters:
@@ -51,14 +52,16 @@ paths:
                 status: ok
                 error: null
                 data:
-                  port: 443
-                  service: HTTPS
-                  protocol: TCP
-                  description: HTTP Secure (HTTP over TLS/SSL)
-                  category: Web
-                  is_well_known: true
-                  is_registered: false
-                  is_dynamic: false
+                  count: 1
+                  ports:
+                    - port: 443
+                      service: HTTPS
+                      protocol: TCP
+                      description: HTTP Secure (HTTP over TLS/SSL)
+                      category: Web
+                      is_well_known: true
+                      is_registered: false
+                      is_dynamic: false
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
