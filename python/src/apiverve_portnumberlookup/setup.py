@@ -10,14 +10,14 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_portnumberlookup',
-    version='1.1.14',
+    version='1.2.2',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
-    description='Port Number Lookup is a tool for looking up well-known port numbers and network services. It provides information about ports including service name, protocol, description, and category for common network services.',
+    description='Port Number Lookup identifies network services and port ranges from any port number or service name. Each query returns the assigned service, description, and classification across well-known, registered, or dynamic ranges, while paid plans add protocol details.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://apiverve.com/marketplace/portnumberlookup?utm_source=pypi&utm_medium=homepage',
+    url='https://apiverve.com/marketplace/portnumberlookup?utm_source=pypi&utm_medium=referral&utm_content=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
