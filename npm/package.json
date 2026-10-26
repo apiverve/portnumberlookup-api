@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/portnumberlookup",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Port Number Lookup identifies network services and port ranges from any port number or service name. Each query returns the assigned service, description, and classification across well-known, registered, or dynamic ranges, while paid plans add protocol details.",
   "main": "index.js",
   "types": "index.d.ts",
